@@ -1,0 +1,47 @@
+% !TeX spellcheck = nl
+\documentclass[]{subfiles}
+\begin{document}
+	\section{Eigenschappen van een convolutie}
+	 Er zijn zes eigenschappen die gelden voor een convolutie.
+	 \subsection{Lineariteit}
+	 \begin{equation}
+	 	f\ast (ag_1+bg_2)= a(f\ast g_1)  +b(f\ast g_2)
+	 \end{equation}
+ 	\subsection{Commutativiteit}
+ 	\begin{equation}
+ 		f\ast g = g \ast f
+ 	\end{equation}
+ \subsection{Associativiteit}
+ \begin{equation}
+ 	f\ast (g\ast h) = (f\ast g) \ast h
+ \end{equation}
+\subsection{Causale functies}
+Als
+\begin{equation}
+	\left\{ \begin{array}{r@{\text{ = }}l}
+		f(t)& 0\\
+		g(t)&0
+	\end{array}\right.
+	\text{voor } t<0
+\end{equation}
+dan zijn deze functies causaal, en kunnen we zeggen dat:
+\begin{align*}
+	(f\ast g) (t) &= \int_{-\infty}^{\infty} f(\tau)g(t-\tau)d\tau\\
+	&= \int_{0}^{t}f(\tau)g(t-\tau)d\tau
+\end{align*}
+\subsection{eindig interval}
+Als
+\begin{equation}
+	\left\{ \begin{array}{r@{\text{ voor }}l}
+		f(t)\neq 0& t\in\left[ 0,t_1\right] \\
+		g(t)\neq 0&t\in \left[ 0,t_2\right] 
+	\end{array}\right.
+\end{equation}
+dan zal $(f\ast g)(t)\neq 0$ voor het interval $\left[0,t_1+t_2 \right] $.
+\subsection{Delta functie}
+\begin{align*}
+	x(t)\ast \delta(t-t_0) &= \int_{-\infty}^{\infty}\delta(\tau-t_0)x(t-\tau)d\tau\\
+	&=  x(t-t_0)
+\end{align*}
+Dit zal leiden tot een een verschuiving van de functie naar rechts met een afstand $t_0$.
+\end{document}
