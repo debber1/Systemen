@@ -1,13 +1,13 @@
-% !TeX spellcheck = nl
+% !TeX spellcheck = en_GB
 \documentclass[]{subfiles}
 \begin{document}
-	\section{Definitie convolutie}
-	De formele definitie van een convolutie kan men als volgt weergeven: 
+	\section{Definition of the convolution}
+	The formal definition of a convolution can be written down as follows:
 	\begin{equation}
 		\label{eq:defConvo}
 		f(t)\ast g(t) = (f\ast g)(t) = \int_{-\infty}^{\infty} f(\tau) g(t-\tau) d\tau
 	\end{equation}
-\subsection{Voorbeeld aan de hand van twee pulsen}
+\subsection{Example for two pulses}
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}{.4\textwidth}
@@ -23,7 +23,7 @@
 				\draw[blue] (0,1) -- (1,1) node[anchor=south] {$f(t)$}-- (1,0) ;
 			\end{tikzpicture}
 		\end{center}
-	\caption{Functie $f(t)$}
+	\caption{Function $f(t)$}
 	\end{subfigure}%
 	\begin{subfigure}{.4\textwidth}
 		\begin{center}
@@ -38,16 +38,16 @@
 				\draw[red] (1,1) -- (2,1) node[anchor=south] {$g(t)$}-- (2,0) ;
 			\end{tikzpicture}
 		\end{center}
-	\caption{Functie $g(t)$}
+	\caption{Function $g(t)$}
 	\end{subfigure}
-\caption{Te convolueren pulsen}
+\caption{The two example pulses before convolution}
 \label{fig:convoVoorbeeld}
 \end{figure}
-De functies in figuur \ref{fig:convoVoorbeeld} kunnen we wiskundig beschrijven als:
+The functions in figure \ref{fig:convoVoorbeeld} can be mathematically defined as follows:
 \begin{equation}
 	f(t) = g(t) = u(t)-u(t-1)
 \end{equation}
-Als we hier de definitie op toepassen, zien we dat we de functie $g(t)$ moeten spiegelen tegenover de x as vanwege het minteken in het argument in vergelijking \ref{eq:defConvo}.  We krijgen dus volgende figuren: \\
+If we apply the definition on these two pulses, we can notice that the function $g(t)$ gets mirrored with respect to the y axis because of the minus sign in the argument as seen in equation \ref{eq:defConvo}. This results in the following figures:  \\
 
 \begin{figure}[h]
 	\centering
@@ -64,7 +64,7 @@ Als we hier de definitie op toepassen, zien we dat we de functie $g(t)$ moeten s
 				\draw[blue] (0,1) -- (1,1) node[anchor=south] {$f(t)$}-- (1,0) ;
 			\end{tikzpicture}
 		\end{center}
-		\caption{Functie $f(t)$}
+		\caption{Function $f(t)$}
 	\end{subfigure}%
 	\begin{subfigure}{.4\textwidth}
 		\begin{center}
@@ -79,12 +79,12 @@ Als we hier de definitie op toepassen, zien we dat we de functie $g(t)$ moeten s
 				\draw[red] (0,0) -- (0,1) node[anchor=south] {$g(-t)$}-- (1,1) ;
 			\end{tikzpicture}
 		\end{center}
-		\caption{Functie $g(-t)$}
+		\caption{Function $g(-t)$}
 	\end{subfigure}
-	\caption{Toepassing van de definitie}
+	\caption{Applying the definition}
 	\label{fig:convoVoorbeeld2}
 \end{figure}
-Nu kunnen we de functie $g(-t)$ laten schuiven over de functie $f(t)$. Dit proces wordt weergegeven in figuur \ref{fig:convoSchuiven}. \\
+We can now `slide' the function $g(-t)$ over the function $f(t)$. This process is shown in figure \ref{fig:convoSchuiven}.\\
 
 \begin{figure}[h]
 	\centering
@@ -102,7 +102,7 @@ Nu kunnen we de functie $g(-t)$ laten schuiven over de functie $f(t)$. Dit proce
 				\draw[red] (-1.3,0) -- (-1.3,1) node[anchor=south] {$g(-0.3-\tau)$}-- (-0.3,1) -- (-0.3,0) ;
 			\end{tikzpicture}
 		\end{center}
-		\caption{Functie $g(-0.3 -\tau)$}
+		\caption{Function $g(-0.3 -\tau)$}
 	\end{subfigure}%
 		\begin{subfigure}{.4\textwidth}
 		\begin{center}
@@ -119,19 +119,19 @@ Nu kunnen we de functie $g(-t)$ laten schuiven over de functie $f(t)$. Dit proce
 				\fill[blue!30!white] (0.02,0.02) rectangle (0.29,0.98);
 			\end{tikzpicture}
 		\end{center}
-		\caption{Functie $g(0.3 -\tau)$}
+		\caption{Function $g(0.3 -\tau)$}
 	\end{subfigure}%
-	\caption{Toepassing van de definitie}
+	\caption{`Sliding' the functions over each other}
 	\label{fig:convoSchuiven}
 \end{figure}
-We laten dit proces door gaan tot de de functies volledig over elkaar geschoven zijn.  Dit is de visuele interpretatie van een convolutie
+This process continues until the functions have completely slid over one another. This is the visual interpretation of a convolution.
 \newpage
-Wiskundig kunnen we deze convolutie als volgt uitwerken:
+We can compute this convolution as follows:
 \begin{align}
 	(f\ast g)(t) &= \int_{-\infty}^{\infty} f(\tau) g(t-\tau) d\tau\\
 	&= \int_{-\infty}^{\infty}\left[  u(t)-u(t-1)\right]  \cdot \left[ u(t)-u(t-1)\right] d\tau
 \end{align}
-We kunnen nu twee gevallen onderscheiden op basis van de waarde van $t$. Figuur \ref{fig:tweeGevallen} illustreert deze 2 gevallen. \\
+We can now differentiate two cases based on the value off $t$. Figure \ref{fig:tweeGevallen} illustrates these two cases.\\
 
 \begin{figure}[h]
 	\centering
@@ -169,16 +169,16 @@ We kunnen nu twee gevallen onderscheiden op basis van de waarde van $t$. Figuur 
 		\end{center}
 		\caption{$t\geq 1$}
 	\end{subfigure}%
-	\caption{twee gevallen}
+	\caption{Two cases}
 	\label{fig:tweeGevallen}
 \end{figure}
-De conclusie die we hieruit kunnen trekken is dat we voor elk geval apart een eenvoudige integraal kunnen opstellen. 
+It is now obvious that we can make an elementary integral for each case seen in figure \ref{fig:tweeGevallen}. 
 \begin{align}
 	(f\ast g)(t) &= \int_{0}^{t}1d\tau = t \quad&\text{voor}\quad 0\leq t\leq 1\\
 	(f\ast g)(t) &= \int_{t-1}^{1}1d\tau = -t+2 \quad&\text{voor} \quad1\leq t\leq 2\\
 	(f\ast g)(t) &= 0 \quad&\text{voor} \quad t\leq 0\vee t\geq 2
 \end{align}
-Grafisch kunnen we het resultaat van deze convolutie als volgt weergeven: 
+We can graphically represent these results as follows: 
 \begin{center}
 	\begin{tikzpicture}
 		\centering

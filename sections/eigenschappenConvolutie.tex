@@ -1,47 +1,48 @@
-% !TeX spellcheck = nl
+% !TeX spellcheck = en_GB
 \documentclass[]{subfiles}
 \begin{document}
-	\section{Eigenschappen van een convolutie}
-	 Er zijn zes eigenschappen die gelden voor een convolutie.
-	 \subsection{Lineariteit}
+	\section{Property's of a convolution}
+	 There are six property's which are true for a convolution. These should be included on the formula sheet on the exam. However, you do need to be able to explain what they mean and how they relate to each other.
+	 \subsection{Linearity}
 	 \begin{equation}
 	 	f\ast (ag_1+bg_2)= a(f\ast g_1)  +b(f\ast g_2)
 	 \end{equation}
- 	\subsection{Commutativiteit}
+ 	\subsection{Commutativity}
  	\begin{equation}
  		f\ast g = g \ast f
  	\end{equation}
- \subsection{Associativiteit}
+ \subsection{associativity}
  \begin{equation}
  	f\ast (g\ast h) = (f\ast g) \ast h
  \end{equation}
-\subsection{Causale functies}
-Als
+\subsection{Causal functions}
+\label{sec:causalFunctions}
+If
 \begin{equation}
 	\left\{ \begin{array}{r@{\text{ = }}l}
 		f(t)& 0\\
 		g(t)&0
 	\end{array}\right.
-	\text{voor } t<0
+	\text{for } t<0
 \end{equation}
-dan zijn deze functies causaal, en kunnen we zeggen dat:
+we can say these functions are causal, furthermore we can state that:
 \begin{align*}
 	(f\ast g) (t) &= \int_{-\infty}^{\infty} f(\tau)g(t-\tau)d\tau\\
 	&= \int_{0}^{t}f(\tau)g(t-\tau)d\tau
 \end{align*}
-\subsection{eindig interval}
-Als
+\subsection{Finite interval}
+if
 \begin{equation}
-	\left\{ \begin{array}{r@{\text{ voor }}l}
+	\left\{ \begin{array}{r@{\text{ for }}l}
 		f(t)\neq 0& t\in\left[ 0,t_1\right] \\
 		g(t)\neq 0&t\in \left[ 0,t_2\right] 
 	\end{array}\right.
 \end{equation}
-dan zal $(f\ast g)(t)\neq 0$ voor het interval $\left[0,t_1+t_2 \right] $.
-\subsection{Delta functie}
+then $(f\ast g)(t)\neq 0$ for the interval $\left[0,t_1+t_2 \right] $.
+\subsection{Delta function}
 \begin{align*}
 	x(t)\ast \delta(t-t_0) &= \int_{-\infty}^{\infty}\delta(\tau-t_0)x(t-\tau)d\tau\\
 	&=  x(t-t_0)
 \end{align*}
-Dit zal leiden tot een een verschuiving van de functie naar rechts met een afstand $t_0$.
+This will lead to a shift of the function to the right with a distance of $t_0$. 
 \end{document}

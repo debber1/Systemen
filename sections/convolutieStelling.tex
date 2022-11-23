@@ -1,24 +1,24 @@
-% !TeX spellcheck = nl
+% !TeX spellcheck = en_GB
 \documentclass[]{subfiles}
 \begin{document}
-	\section{Convolutie stelling}
-	We bewijzen de convolutie stelling die zegt dat als $f(t)$ en $g(t)$ causale functies zijn, dat $f(t)\ast g(t)$ gelijk is aan $F(s)\cdot G(s)$. Om dit te bewijzen passen we eerst de definitie van de Laplace transformatie toe op de convolutie:
+	\section{Convolution theorem}
+	We want to prove the convolution theorem which states that when $f(t)$ and $g(t)$ are causal functions, they're convolution is equal to $F(s)\cdot G(s)$. To prove this, we first apply the definition of the Laplace transform on the convolution:
 	\begin{equation}
 		\Lapl\left[ f(t)\ast g(t)\right]  = \int_{0}^{+\infty}\left[ f(t)\ast g(t)\right] e^{-st}dt
 	\end{equation}
-	Verder werkend met het rechter lid, kunnen we nu ook de definitie van de convolutie toe passen:
+	Continuing with the right part of the equation, we can also apply the definition of the convolution:
 	\begin{equation}
 		=\int_{0}^{+\infty}\left[ \int_{-\infty}^{+\infty}f(\tau)g(t-\tau)d\tau	\right] e^{-st}dt
 	\end{equation}
-	Door het toepassen van de causale eigenschap, kunnen we de grenzen van de binnenste integraal aanpassen: 
+	We can change the limits of the inside integral if we use the property's of causal functions (see section \ref{sec:causalFunctions})
 	\begin{equation}
 		=\int_{-\infty}^{+\infty}\left[ \int_{0}^{t}f(\tau)g(t-\tau)d\tau\right] e^{-st}dt
 	\end{equation}
-	We wisselen nu de integralen om van volgorde. Dit kunnen we doen mits verandering van grenzen. 
+	We now change the order of the integrals. We can only do this if we also change the limits of integration.
 	\begin{equation}
 		=\int_{0}^{+\infty}f(\tau)\left[ \int_{\tau}^{+\infty}g(t-\tau)e^{-st}dt\right] d\tau
 	\end{equation}
-	Figuur \ref{fig:grenzenLaplace} en bijhorende grenzen \ref{eq:Grenzen}, lichten toe hoe de grenzen moeten veranderen.
+	Figure \ref{fig:grenzenLaplace} and accompanying limits  \ref{eq:Grenzen}, give a visual aid for calculating the new limits.
 	\begin{figure}[h]
 		\centering
 		\begin{subfigure}{.4\textwidth}
@@ -35,10 +35,9 @@
 					\draw[black] (0,0) -- (2.5,2.5) node[anchor=south] {$\tau = t$} ;
 					\draw[black] (1,0) -- (1,1) ;
 					\draw[black] (2,0) -- (2,2) ;
-					%TODO:  zorg dat de opp onder de lijn gekleurd is 
 				\end{tikzpicture}
 			\end{center}
-			\caption{Voor wisseling}
+			\caption{Before the change}
 		\end{subfigure}%
 		\begin{subfigure}{.4\textwidth}
 			\begin{center}
@@ -54,12 +53,11 @@
 						\draw[black] (0,0) -- (2.5,2.5) node[anchor=south] {$\tau = t$} ;
 						\draw[black] (1,1) -- (2.5,1) ;
 						\draw[black] (2,2) -- (2.5,2) ;
-						%TODO:  zorg dat de opp onder de lijn gekleurd is 
 				\end{tikzpicture}
 			\end{center}
-			\caption{Na wisseling}
+			\caption{After the change}
 		\end{subfigure}
-		\caption{Visualisatie van de verandering van de grenzen}
+		\caption{Visualisation of the change of limits }
 		\label{fig:grenzenLaplace}
 	\end{figure}
 	\begin{equation}
@@ -73,23 +71,23 @@
 	\end{array}\right.
 	\label{eq:Grenzen}
 	\end{equation}
-	Nu kunnen een eigenschap van de exponentiële functie toe passen:  
+	We can now use a property of the exponential function:
 	\begin{equation}
 		=\int_{0}^{+\infty}f(\tau)\left[ \int_{\tau}^{+\infty}g(t-\tau)\underbrace{e^{-s(t-\tau)}e^{-s\tau}}_{e^{-st}}dt\right]d\tau 
 	\end{equation}
-	We passen nu de lineariteit van de integraal toe, hierdoor kunnen we de term $e^{-st}$ buiten de binnenste integraal zetten. 
+	We now apply the linearity property of integrals, because of this, we can move the term $e^{-st}$ outside of the inside integral.
 	\begin{equation}
 		=\int_{0}^{+\infty}f(\tau)e^{-st}\left[ \int_{\tau}^{+\infty}g(t-\tau)e^{-s(t-\tau)}dt\right] d\tau
 	\end{equation}%
 	\newpage%
-	We passen nu een substitutie toe: $u = t-\tau  \Rightarrow du = dt \Rightarrow u: 0\rightarrow+\infty$
+	We now use a substitution: $u = t-\tau  \Rightarrow du = dt \Rightarrow u: 0\rightarrow+\infty$
 	\begin{equation}
 		=\int_{0}^{+\infty}f(\tau)e^{-st}\left[ \underbrace{\int_{0}^{+\infty}g(u)e^{-su}du}_{=G(s)}\right] d\tau
 	\end{equation}
-	We passen nu nogmaals de lineariteit van de integraal toe om $G(s)$ vooraan te kunnen zetten:
+	We apply the linearity property of integrals for the final time to move $G(s)$ outside of the integral:
 	\begin{align}
 		&=G(s)\underbrace{\int_{0}^{+\infty}f(\tau)e^{-s\tau}d\tau}_{=F(s)}\\
 		&=G(s)F(s)
 	\end{align}
-	Hiermee is bewezen dat $f(t)\ast g(t)$ gelijk is aan $F(s)\cdot G(s)$.
+	Hereby we have proved that $f(t)\ast g(t)$ is equal to $F(s)\cdot G(s)$.
 \end{document}
