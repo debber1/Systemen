@@ -1,0 +1,84 @@
+% !TeX spellcheck = en_GB
+\documentclass[]{subfiles}
+\begin{document}
+	\section{Description of LTC in different domains}
+	We can describe an LTC system  in the time domain with differential equations:
+	\begin{equation}
+		 \begin{array}{l@{\text{ $\Rightarrow$ }}l}
+			\text{First order}& y'(t)-ky(t)=x(t)\\
+			\text{Second order}&y''(t)+ay'(t)+by(t)=x(t)
+		\end{array}
+	\end{equation}
+	In general, these systems can become fairly large, that is why we introduce some notation which is used for denoting higher order differentiations: 
+	\begin{equation}
+		\left\{ \begin{array}{r@{\text{ $=$ }}l}
+			y^{(k)}(t)& \frac{d^ky(t)}{dt^k} \\
+			x^{(k)}(t)& \frac{d^kx(t)}{dt^k}
+		\end{array}\right.
+	\end{equation}
+	We can now look at the most general LTC we can make with differential equations:
+	\begin{equation}
+		y^{(N)}(t)+a_{N-1}y^{(N-1)}(t)+\ldots+a_1y^{(1)}(t)+a_0y^{(0)}(t)=b_Mx^{(M)}(t)+\ldots+b_0x^{(0)}(t)
+	\end{equation}
+	For reasons which are beyond the scope of this course, we remark that $N > M$ for LTC systems. To explore the descriptions of these systems in other domains, we will take the Laplace transform of both sides of the equation stated above.
+	\begin{equation}
+		\Lapl \left[ y^{(N)}(t)+a_{N-1}y^{(N-1)}(t)+\ldots+a_1y^{(1)}(t)+a_0y^{(0)}(t)\right]  =\Lapl \left[ b_Mx^{(M)}(t)+\ldots+b_0x^{(0)}(t)\right] 
+	\end{equation}
+	We now apply the linearity property:
+	\begin{equation}
+		\Lapl \left[ y^{(N)}(t)\right] +a_{N-1}\Lapl\left[ y^{(N-1)}(t)\right] +\ldots+a_1\Lapl\left[ y^{(1)}(t)\right] +a_0\Lapl\left[ y^{(0)}(t)\right]  =b_M\Lapl \left[ x^{(M)}(t)\right] +\ldots+b_0\Lapl\left[ x^{(0)}(t)\right] 
+	\end{equation}
+	If we now make the assumption that all the initial conditions are equal to zero, we can apply the differentiation property:
+	\begin{align}
+		s^NY(s)+s^{N-1}a_{N-1}Y(s)+\ldots+s^1a_1Y(s)+s^0a_0Y(s)&=s^Mb_MX(s)+\ldots+s^0b_0X(s)\\
+		Y(s)\left[ s^N+s^{N-1}a_{N-1}+\ldots+s^1a_1+s^0a_0\right] &=X(s)\left[ s^Mb_M+\ldots+s^0b_0\right] 
+	\end{align}
+	We can now define the transfer function $H(s)$:
+	\begin{equation}
+		H(s)=\frac{Y(s)}{X(s)}=\frac{s^Mb_M+\ldots+s^0b_0}{s^N+s^{N-1}a_{N-1}+\ldots+s^1a_1+s^0a_0}
+		\label{eq:def:transfer}
+	\end{equation}
+	\begin{figure}[h]
+		\centering
+			\begin{tikzpicture}[node distance=2cm]
+			\centering
+			\node (start) [startstop] {$X(s)$};
+			\node (pro1) [process, right of=start , xshift=2cm] {$H(s)$};
+			\node (stop) [startstop, right of=pro1, xshift=2cm] {$Y(s)=H(s)X(s)$};
+			\draw [arrow] (start) --  (pro1);
+			\draw [arrow] (pro1) --  (stop);
+			\draw [arrow] (pro1) --  (1,-1);
+			\draw [arrow] (pro1) --  (7,-1);
+		\end{tikzpicture}
+	\end{figure}	
+	\begin{multicols}{2}
+		Laplace transform (Laplace domain)
+		\begin{equation}
+			y(t) = h(t)\ast x(t)
+		\end{equation}%
+		\begin{align}
+			h(t)&=iLT\left[ H(s)\right] \\
+			&=iLT\left[ \frac{Y(s)}{X(s)}\right] \\
+			&=iLT\left[ Y(s)\right] \quad X(s)=1
+		\end{align}
+		\begin{equation}
+			h(t) = y(t) \text{ with } x(t)=\delta(t)
+		\end{equation}
+		\vfill
+		
+		\columnbreak
+		Fourier transform (Frequency domain)
+		\begin{equation}
+			Y(i\omega) = H(i\omega)X(i\omega)
+		\end{equation}
+		\begin{align}
+			H(j\omega)&=\text{frequency response}\\
+			&=\underbrace{|H(i\omega)|}_{\text{magnitude response}}e^{i\angle H(i\omega)}		
+		\end{align}
+	\begin{align}
+		x(t)&=\sin(\omega_0t)\\
+		y(t)&=|H(i\omega_0)|\sin(\omega_0t+\angle H(i\omega))
+	\end{align}
+	\end{multicols}
+
+\end{document}
