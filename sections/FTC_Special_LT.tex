@@ -2,14 +2,14 @@
 \documentclass[]{subfiles}
 \begin{document}
 	\section{The FTC as a special case of the LT}
-	Both  the  Laplace  transform  and  the  Fourier  transform  are  time  frequency  transforms that transform a time signal in to a spectrum. The latter is, in fact, just a special case of the former. 
+	Both  the  Laplace  transform  and  the  Fourier  transform  are  time  frequency  transforms that transform a time signal into a spectrum. The latter is, in fact, just a special case of the former. 
 		\begin{equation}
 		\left\{ \begin{array}{r@{\text{ $\Rightarrow$ }}l}
 			\text{Fourier transform}& F(i\omega)= \int_{-\infty}^{\infty}f(t)e^{-i\omega t}dt \\
 			\text{Laplace transform}&F(s)=\int_{0}^{\infty}f(t)e^{-st} dt
 		\end{array}\right.
 	\end{equation}
-	The first difference between these operations is the limits of the integrals. If we consider the case of a causal signal, we don't have to evaluate the Fourier transform from $-\infty$. A lower boundary  of $0$ would be sufficient. 
+	The first difference between these operations is in the limits of the integrals. Say we only consider the case of a causal signal, we won't have to evaluate the Fourier transform from $-\infty$, but instead a lower boundary  of $0$ would be sufficient. 
 			\begin{equation}
 		\left\{ \begin{array}{r@{\text{ $\Rightarrow$ }}l}
 			\text{Fourier transform}& F(i\omega)= \int_{0}^{\infty}f(t)e^{-i\omega t}dt \\
@@ -23,5 +23,5 @@
 			\text{Laplace transform}&e^{-st} = e^{-\sigma t} e^{-i\omega t}
 		\end{array}\right.
 	\end{equation}
-	This suggests that that the FTC is just a special case of the LT, specifically when $\sigma$ is equal to zero for the Laplace transform of a causal signal. Note that this is not always true, even if the above stated conditions are met. To understand why this is, we need to consider the fact that these integrals are improper. These may converge or diverge if evaluated to infinity, because of this, we can not simply say these are always equal.
+	This suggests that that the FTC is just a special case of the LT, specifically when $\sigma$ is equal to zero for the Laplace transform of a causal signal. Note that this is not always true, even if the above stated conditions are met. To understand why this is, we need to consider the fact that these integrals are improper. They may converge or diverge if evaluated to infinity, meaning we can not simply say these are always equal.
 \end{document}
