@@ -6,11 +6,11 @@
 	\begin{equation}
 		\Lapl\left[ f(t)\ast g(t)\right]  = \int_{0}^{+\infty}\left[ f(t)\ast g(t)\right] e^{-st}dt
 	\end{equation}
-	Continuing with the right part of the equation, we can also apply the definition of the convolution:
+	Continuing with the right side of the equation, we can also apply the definition of the convolution:
 	\begin{equation}
 		=\int_{0}^{+\infty}\left[ \int_{-\infty}^{+\infty}f(\tau)g(t-\tau)d\tau	\right] e^{-st}dt
 	\end{equation}
-	We can change the limits of the inside integral if we use the property's of causal functions (see section \ref{sec:causalFunctions})
+	We can change the limits of the inside integral if we use the properties of causal functions (see section \ref{sec:causalFunctions})
 	\begin{equation}
 		=\int_{-\infty}^{+\infty}\left[ \int_{0}^{t}f(\tau)g(t-\tau)d\tau\right] e^{-st}dt
 	\end{equation}
@@ -18,7 +18,7 @@
 	\begin{equation}
 		=\int_{0}^{+\infty}f(\tau)\left[ \int_{\tau}^{+\infty}g(t-\tau)e^{-st}dt\right] d\tau
 	\end{equation}
-	Figure \ref{fig:grenzenLaplace} and accompanying limits  \ref{eq:Grenzen}, give a visual aid for calculating the new limits.
+	Figure \ref{fig:grenzenLaplace} and accompanying limits underneath (\ref{eq:Grenzen}), give a visual aid for calculating the new limits.
 	\begin{figure}[h]
 		\centering
 		\begin{subfigure}{.4\textwidth}
@@ -75,7 +75,7 @@
 	\begin{equation}
 		=\int_{0}^{+\infty}f(\tau)\left[ \int_{\tau}^{+\infty}g(t-\tau)\underbrace{e^{-s(t-\tau)}e^{-s\tau}}_{e^{-st}}dt\right]d\tau 
 	\end{equation}
-	We now apply the linearity property of integrals, because of this, we can move the term $e^{-st}$ outside of the inside integral.
+	Then we apply the linearity property of integrals. Because of this, we can move the term $e^{-st}$ outside of the inside integral.
 	\begin{equation}
 		=\int_{0}^{+\infty}f(\tau)e^{-st}\left[ \int_{\tau}^{+\infty}g(t-\tau)e^{-s(t-\tau)}dt\right] d\tau
 	\end{equation}%
@@ -87,7 +87,7 @@
 	We apply the linearity property of integrals for the final time to move $G(s)$ outside of the integral:
 	\begin{align}
 		&=G(s)\underbrace{\int_{0}^{+\infty}f(\tau)e^{-s\tau}d\tau}_{=F(s)}\\
-		&=G(s)F(s)
+		&=G(s)\cdot F(s)
 	\end{align}
 	Hereby we have proved that $f(t)\ast g(t)$ is equal to $F(s)\cdot G(s)$.
 \end{document}

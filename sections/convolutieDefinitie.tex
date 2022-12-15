@@ -1,7 +1,7 @@
 % !TeX spellcheck = en_GB
 \documentclass[]{subfiles}
 \begin{document}
-	\section{Definition of the convolution}
+	\section{Definition of a convolution}
 	The formal definition of a convolution can be written down as follows:
 	\begin{equation}
 		\label{eq:defConvo}
@@ -131,7 +131,7 @@ We can compute this convolution as follows:
 	(f\ast g)(t) &= \int_{-\infty}^{\infty} f(\tau) g(t-\tau) d\tau\\
 	&= \int_{-\infty}^{\infty}\left[  u(t)-u(t-1)\right]  \cdot \left[ u(t)-u(t-1)\right] d\tau
 \end{align}
-We can now differentiate two cases based on the value off $t$. Figure \ref{fig:tweeGevallen} illustrates these two cases.\\
+We can now differentiate two cases based on the value of $t$. Figure \ref{fig:tweeGevallen} illustrates these two cases.\\
 
 \begin{figure}[h]
 	\centering
@@ -172,7 +172,7 @@ We can now differentiate two cases based on the value off $t$. Figure \ref{fig:t
 	\caption{Two cases}
 	\label{fig:tweeGevallen}
 \end{figure}
-It is now obvious that we can make an elementary integral for each case seen in figure \ref{fig:tweeGevallen}. 
+We can now divide the process in figure \ref{fig:tweeGevallen} into three different stages using elementary integrals. 
 \begin{align}
 	(f\ast g)(t) &= \int_{0}^{t}1d\tau = t \quad&\text{voor}\quad 0\leq t\leq 1\\
 	(f\ast g)(t) &= \int_{t-1}^{1}1d\tau = -t+2 \quad&\text{voor} \quad1\leq t\leq 2\\
