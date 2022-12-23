@@ -3,20 +3,20 @@
 \begin{document}
 	\section{Impulse response $h(t)$}
 	To analyse the response a system has when its input is an impulse, we first need to define some notation:
-	\begin{equation}
+	\begin{equation*}
 		y(t) = S:f(t)
-	\end{equation}
+	\end{equation*}
 	This is how we denote the effects of  system $S$ when presented with input $f(t)$.   If we now apply the sampling property we get the following:
-	\begin{equation}
+	\begin{equation*}
 		y(t)=S:\int_{-\infty}^{+\infty}f(\tau)\delta(t-\tau)d\tau
-	\end{equation}
+	\end{equation*}
 	Since S is an LTC system, we can move it inside of the integral:
-	\begin{equation}
+	\begin{equation*}
 		y(t)=\int_{-\infty}^{+\infty}f(\tau)\underbrace{\left[ S:\delta(t-\tau)\right] }_{h(t-\tau)}d\tau
-	\end{equation}
+	\end{equation*}
 	This now becomes:
-	\begin{equation}
+	\begin{equation*}
 		y(t)=\int_{-\infty}^{+\infty}f(\tau)h(t-\tau)d\tau=f(t)\ast h(t)
-	\end{equation}
+	\end{equation*}
 	This is a very important result: The zero  state  response  $y(t)$  of  a system  with  known  impulse  response $ h(t)$  is  the convolution of the excitation $x(t)$  with the impulse response. 
 \end{document}

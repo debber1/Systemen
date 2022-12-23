@@ -19,17 +19,17 @@
 		\end{tikzpicture}
 	\end{figure}
 	This signal can be mathematically defined as:
-	\begin{equation}
+	\begin{equation*}
 		x(t) = A\left[ u(t+\frac{T}{2})\right] -u(t-\frac{T}{2})
-	\end{equation}
+	\end{equation*}
 	The Fourier transform of this signal would then be:
-	\begin{equation}
+	\begin{equation*}
 		X(\omega) = \int_{-\infty}^{\infty}\left[ A\left[ u(t+\frac{T}{2})\right] -u(t-\frac{T}{2})\right] e^{-i\omega t}dt
-	\end{equation}
+	\end{equation*}
 	Because $x(t)$ is always equal to zero outside of the interval $\left[ -\frac{T}{2},\frac{T}{2}\right] $, we are allowed to change the limits of the integral.
-	\begin{equation}
+	\begin{equation*}
 		X(\omega) = \int_{-\frac{T}{2}}^{\frac{T}{2}}A e^{-i\omega t}dt
-	\end{equation}
+	\end{equation*}
 	It is now trivial to evaluate the integral:
 	\begin{align}
 		X(\omega)&=\frac{A}{-i\omega}e^{-i\omega t} \bigg\vert_{-\frac{T}{2}}^{\frac{T}{2}}\\
@@ -40,7 +40,7 @@
 		&=ATsinc(\frac{\omega T}{2})
 	\end{align}
 	Between step \ref{eq:block:before} and \ref{eq:block:after}, we made use of the following property:
-	\begin{equation}
+	\begin{equation*}
 		\sin(\frac{\omega T}{2}) = \frac{e^{i\omega T/2}-e^{-i\omega T/2}}{2i}
-	\end{equation}
+	\end{equation*}
 \end{document}

@@ -5,21 +5,21 @@
 	In order to get more insight into the behaviour of an LTC system, we can take a closer look at the poles and zeros of the transfer function as defined in equation \ref{eq:def:transfer}. 
 	\subsection{Zeros of a system}
 	We can find the zeros of a system by solving the numerator equation for zero:
-	\begin{equation}
+	\begin{equation*}
 		b_Ms^M+\ldots+b_1s^1+b_0=0 \Leftrightarrow S=z_i\in \mathbb{C}: i=1,\ldots,M
-	\end{equation}
+	\end{equation*}
 	Here, $z_i$ is a zero of the system.
 		\subsection{Poles of a system}
 	We can find the Poles of a system by solving the denominator equation for zero:
-	\begin{equation}
+	\begin{equation*}
 		s^N+s^{N-1}a_{N-1}+\ldots+s^1a_1+s^0a_0=0 \Leftrightarrow S=p_j\in \mathbb{C}: j=1,\ldots,N
-	\end{equation}
+	\end{equation*}
 	Here, $p_i$ is a pole of the system.
 	\subsection{Conclusion}
 	We can make some observations based on the values of the poles:
-	\begin{align}
+	\begin{align*}
 		\forall j:& \text{Re}\{p_j\}<0 \Rightarrow \text{Stable}\\
 		\exists j:& \text{Re}\{p_j\}>0 \Rightarrow \text{Unstable}\\
 		\exists j:& \text{Re}\{p_j\}=0 \Rightarrow \text{Marginally stable}
-	\end{align}
+	\end{align*}
 \end{document}

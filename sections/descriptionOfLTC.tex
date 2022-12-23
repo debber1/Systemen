@@ -3,36 +3,36 @@
 \begin{document}
 	\section{Description of LTC in different domains}
 	We can describe an LTC system  in the time domain with differential equations:
-	\begin{equation}
+	\begin{equation*}
 		 \begin{array}{l@{\text{ $\Rightarrow$ }}l}
 			\text{First order}& y'(t)-ky(t)=x(t)\\
 			\text{Second order}&y''(t)+ay'(t)+by(t)=x(t)
 		\end{array}
-	\end{equation}
+	\end{equation*}
 	In general, these systems can become fairly large, that is why we introduce some notation which is used for denoting higher order differentiations: 
-	\begin{equation}
+	\begin{equation*}
 		\left\{ \begin{array}{r@{\text{ $=$ }}l}
 			y^{(k)}(t)& \frac{d^ky(t)}{dt^k} \\
 			x^{(k)}(t)& \frac{d^kx(t)}{dt^k}
 		\end{array}\right.
-	\end{equation}
+	\end{equation*}
 	We can now look at the most general LTC we can make with differential equations:
-	\begin{equation}
+	\begin{equation*}
 		y^{(N)}(t)+a_{N-1}y^{(N-1)}(t)+\ldots+a_1y^{(1)}(t)+a_0y^{(0)}(t)=b_Mx^{(M)}(t)+\ldots+b_0x^{(0)}(t)
-	\end{equation}
+	\end{equation*}
 	For reasons which are beyond the scope of this course, we remark that $N > M$ for LTC systems. To explore the descriptions of these systems in other domains, we will take the Laplace transform of both sides of the equation stated above.
-	\begin{equation}
+	\begin{equation*}
 		\Lapl \left[ y^{(N)}(t)+a_{N-1}y^{(N-1)}(t)+\ldots+a_1y^{(1)}(t)+a_0y^{(0)}(t)\right]  =\Lapl \left[ b_Mx^{(M)}(t)+\ldots+b_0x^{(0)}(t)\right] 
-	\end{equation}
+	\end{equation*}
 	We now apply the linearity property:
-	\begin{equation}
+	\begin{equation*}
 		\Lapl \left[ y^{(N)}(t)\right] +a_{N-1}\Lapl\left[ y^{(N-1)}(t)\right] +\ldots+a_1\Lapl\left[ y^{(1)}(t)\right] +a_0\Lapl\left[ y^{(0)}(t)\right]  =b_M\Lapl \left[ x^{(M)}(t)\right] +\ldots+b_0\Lapl\left[ x^{(0)}(t)\right] 
-	\end{equation}
+	\end{equation*}
 	If we now make the assumption that all the initial conditions are equal to zero, we can apply the differentiation property:
-	\begin{align}
+	\begin{align*}
 		s^NY(s)+s^{N-1}a_{N-1}Y(s)+\ldots+s^1a_1Y(s)+s^0a_0Y(s)&=s^Mb_MX(s)+\ldots+s^0b_0X(s)\\
 		Y(s)\left[ s^N+s^{N-1}a_{N-1}+\ldots+s^1a_1+s^0a_0\right] &=X(s)\left[ s^Mb_M+\ldots+s^0b_0\right] 
-	\end{align}
+	\end{align*}
 	We can now define the transfer function $H(s)$:
 	\begin{equation}
 		H(s)=\frac{Y(s)}{X(s)}=\frac{s^Mb_M+\ldots+s^0b_0}{s^N+s^{N-1}a_{N-1}+\ldots+s^1a_1+s^0a_0}

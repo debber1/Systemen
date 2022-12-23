@@ -3,10 +3,10 @@
 \begin{document}
 	\section{Definition of a convolution}
 	The formal definition of a convolution can be written down as follows:
-	\begin{equation}
+	\begin{equation*}
 		\label{eq:defConvo}
 		f(t)\ast g(t) = (f\ast g)(t) = \int_{-\infty}^{\infty} f(\tau) g(t-\tau) d\tau
-	\end{equation}
+	\end{equation*}
 \subsection{Example for two pulses}
 \begin{figure}[h]
 	\centering
@@ -44,9 +44,9 @@
 \label{fig:convoVoorbeeld}
 \end{figure}
 The functions in figure \ref{fig:convoVoorbeeld} can be mathematically defined as follows:
-\begin{equation}
+\begin{equation*}
 	f(t) = g(t) = u(t)-u(t-1)
-\end{equation}
+\end{equation*}
 If we apply the definition on these two pulses, we can notice that the function $g(t)$ gets mirrored with respect to the y axis because of the minus sign in the argument as seen in equation \ref{eq:defConvo}. This results in the following figures:  \\
 
 \begin{figure}[h]
@@ -127,10 +127,10 @@ We can now `slide' the function $g(-t)$ over the function $f(t)$. This process i
 This process continues until the functions have completely slid over one another. This is the visual interpretation of a convolution.
 \newpage
 We can compute this convolution as follows:
-\begin{align}
+\begin{align*}
 	(f\ast g)(t) &= \int_{-\infty}^{\infty} f(\tau) g(t-\tau) d\tau\\
 	&= \int_{-\infty}^{\infty}\left[  u(t)-u(t-1)\right]  \cdot \left[ u(t)-u(t-1)\right] d\tau
-\end{align}
+\end{align*}
 We can now differentiate two cases based on the value of $t$. Figure \ref{fig:tweeGevallen} illustrates these two cases.\\
 
 \begin{figure}[h]
@@ -173,11 +173,11 @@ We can now differentiate two cases based on the value of $t$. Figure \ref{fig:tw
 	\label{fig:tweeGevallen}
 \end{figure}
 We can now divide the process in figure \ref{fig:tweeGevallen} into three different stages using elementary integrals. 
-\begin{align}
+\begin{align*}
 	(f\ast g)(t) &= \int_{0}^{t}1d\tau = t \quad&\text{voor}\quad 0\leq t\leq 1\\
 	(f\ast g)(t) &= \int_{t-1}^{1}1d\tau = -t+2 \quad&\text{voor} \quad1\leq t\leq 2\\
 	(f\ast g)(t) &= 0 \quad&\text{voor} \quad t\leq 0\vee t\geq 2
-\end{align}
+\end{align*}
 We can graphically represent these results as follows: 
 \begin{center}
 	\begin{tikzpicture}
