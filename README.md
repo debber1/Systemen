@@ -1,5 +1,5 @@
 # Wiskunde voor systemen
-This is a summary of all the derivations that must be known for the 'Wiskunde voor sytemen' exam.
+This is a summary of all the derivations that must be known for the 'Wiskunde voor systemen' exam.
 Feel free to help by making an issue or a PR.
 
 # PDF
