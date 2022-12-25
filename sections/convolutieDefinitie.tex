@@ -129,7 +129,7 @@ This process continues until the functions have completely slid over one another
 We can compute this convolution as follows:
 \begin{align*}
 	(f\ast g)(t) &= \int_{-\infty}^{\infty} f(\tau) g(t-\tau) d\tau\\
-	&= \int_{-\infty}^{\infty}\left[  u(t)-u(t-1)\right]  \cdot \left[ u(t)-u(t-1)\right] d\tau
+	&= \int_{-\infty}^{\infty}\left[  u(\tau)-u(\tau-1)\right]  \cdot \left[ u(t-\tau)-u(t-\tau-1)\right] d\tau
 \end{align*}
 We can now differentiate two cases based on the value of $t$. Figure \ref{fig:tweeGevallen} illustrates these two cases.\\
 
