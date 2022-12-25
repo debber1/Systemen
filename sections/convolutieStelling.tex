@@ -2,7 +2,7 @@
 \documentclass[]{subfiles}
 \begin{document}
 	\section{Convolution theorem}
-	We want to prove the convolution theorem which states that when $f(t)$ and $g(t)$ are causal functions, they're convolution is equal to $F(s)\cdot G(s)$. To prove this, we first apply the definition of the Laplace transform on the convolution:
+	We want to prove the convolution theorem which states that when $f(t)$ and $g(t)$ are causal functions, their convolution is equal to $F(s)\cdot G(s)$. To prove this, we first apply the definition of the Laplace transform on the convolution:
 	\begin{equation*}
 		\Lapl\left[ f(t)\ast g(t)\right]  = \int_{0}^{+\infty}\left[ f(t)\ast g(t)\right] e^{-st}dt
 	\end{equation*}
@@ -75,14 +75,14 @@
 	\begin{equation*}
 		=\int_{0}^{+\infty}f(\tau)\left[ \int_{\tau}^{+\infty}g(t-\tau)\underbrace{e^{-s(t-\tau)}e^{-s\tau}}_{e^{-st}}dt\right]d\tau 
 	\end{equation*}
-	Then we apply the linearity property of integrals. Because of this, we can move the term $e^{-st}$ outside of the inside integral.
+	Then we apply the linearity property of integrals. Because of this, we can move the term $e^{-s\tau}$ outside of the inside integral.
 	\begin{equation*}
-		=\int_{0}^{+\infty}f(\tau)e^{-st}\left[ \int_{\tau}^{+\infty}g(t-\tau)e^{-s(t-\tau)}dt\right] d\tau
+		=\int_{0}^{+\infty}f(\tau)e^{-s\tau}\left[ \int_{\tau}^{+\infty}g(t-\tau)e^{-s(t-\tau)}dt\right] d\tau
 	\end{equation*}%
 	\newpage%
 	We now use a substitution: $u = t-\tau  \Rightarrow du = dt \Rightarrow u: 0\rightarrow+\infty$
 	\begin{equation*}
-		=\int_{0}^{+\infty}f(\tau)e^{-st}\left[ \underbrace{\int_{0}^{+\infty}g(u)e^{-su}du}_{=G(s)}\right] d\tau
+		=\int_{0}^{+\infty}f(\tau)e^{-s\tau}\left[ \underbrace{\int_{0}^{+\infty}g(u)e^{-su}du}_{=G(s)}\right] d\tau
 	\end{equation*}
 	We apply the linearity property of integrals for the final time to move $G(s)$ outside of the integral:
 	\begin{align*}
