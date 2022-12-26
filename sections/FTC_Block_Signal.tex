@@ -24,7 +24,7 @@
 	\end{equation*}
 	The Fourier transform of this signal would then be:
 	\begin{equation*}
-		X(\omega) = \int_{-\infty}^{\infty}\left[ A\left[ u(t+\frac{T}{2}) -u(t-\frac{T}{2})\right] e^{-i\omega t}dt
+		X(\omega) = \int_{-\infty}^{\infty}\left[ A\left[ u(t+\frac{T}{2}) -u(t-\frac{T}{2})\right] \right]e^{-i\omega t}dt
 	\end{equation*}
 	Because $x(t)$ is always equal to zero outside of the interval $\left[ -\frac{T}{2},\frac{T}{2}\right] $, we are allowed to change the limits of the integral.
 	\begin{equation*}
@@ -33,11 +33,11 @@
 	It is now trivial to evaluate the integral:
 	\begin{align}
 		X(\omega)&=\frac{A}{-i\omega}e^{-i\omega t} \bigg\vert_{-\frac{T}{2}}^{\frac{T}{2}}\\
-		\label{eq:block:before}
 		&= \frac{A}{-i\omega}(e^{-i\omega T/2}-e^{i\omega T/2})\\
-		\label{eq:block:after}
-        	&= {A}\frac{(-e^{-i\omega T/2}+e^{i\omega T/2})}{iw}\\
-        	&= {AT}\frac{(-e^{-i\omega T/2}+e^{i\omega T/2})}{2iw\frac{1}{2}T}\\
+        &= {A}\frac{(-e^{-i\omega T/2}+e^{i\omega T/2})}{iw}\\
+        \label{eq:block:before}
+        &= {AT}\frac{(-e^{-i\omega T/2}+e^{i\omega T/2})}{2iw\frac{1}{2}T}\\
+        \label{eq:block:after}
 		&= {AT}\frac{sin(\frac{\omega T}{2})}{{\frac{\omega T}{2}}}\\
 		&=ATsinc(\frac{\omega T}{2})
 	\end{align}
