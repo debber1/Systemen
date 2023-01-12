@@ -57,9 +57,9 @@
 			y(t) = h(t)\ast x(t)
 		\end{equation}%
 		\begin{align}
-			h(t)&=iLT\left[ H(s)\right] \\
-			&=iLT\left[ \frac{Y(s)}{X(s)}\right] \\
-			&=iLT\left[ Y(s)\right] \quad X(s)=1
+			h(t)&=\Lapl^{-1}\left[ H(s)\right] \\
+			&=\Lapl^{-1}\left[ \frac{Y(s)}{X(s)}\right] \\
+			&=\Lapl^{-1}\left[ Y(s)\right] \quad X(s)=1
 		\end{align}
 		\begin{equation}
 			h(t) = y(t) \text{ with } x(t)=\delta(t)
@@ -72,7 +72,7 @@
 			Y(i\omega) = H(i\omega)X(i\omega)
 		\end{equation}
 		\begin{align}
-			H(j\omega)&=\text{frequency response}\\
+			H(i\omega)&=\text{frequency response}\\
 			&=\underbrace{|H(i\omega)|}_{\text{magnitude response}}e^{i\angle H(i\omega)}		
 		\end{align}
 	\begin{align}
